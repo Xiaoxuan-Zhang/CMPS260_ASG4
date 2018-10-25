@@ -1,0 +1,66 @@
+
+body, html {
+  margin: 10px;
+  padding: 10px;
+  font-family: Helvetica;
+  font-size:12px;
+  overflow: scroll;
+  display:block;
+}
+p {
+  margin: 5px;
+  text-align: left;
+  font-size: 12px;
+}
+.button-container {
+  font-size: 16px;
+  width: 40%;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  text-align: center;
+}
+.file-container {
+  font-size: 16px;
+  width: 50%;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  text-align: center;
+}
+.fileloader-div {
+  font-size: 16px;
+  width: 50%;
+}
+.slider-container {
+  position: absolute;
+  font-size: 16px;
+  width: 40%;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  text-align: center;
+}
+.slider-div {
+  text-align: left;
+}
+.simple-btn {
+  margin: 2px;
+  font-size: 12px;
+}
+
+.simple-btn:focus {
+  background: #e5e5e5;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+.my-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+.file-loader-btn {
+  margin: 2px;
+  font-size: 12px;
+}

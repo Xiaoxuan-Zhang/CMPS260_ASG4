@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <title> "Zhang Xiaoxuan"'s Assignment 4 </title>
+      <!-- Include external libraries -->
+      <link rel="stylesheet" href="style.css" type="text/css" title="external style sheet">
+      <script src = "lib/webgl-utils.js"></script>
+      <script src = "lib/webgl-debug.js"></script>
+      <script src = "lib/updated-cuon-utils.js"></script>
+      <script src = "lib/cuon-matrix.js"></script>
+      <script src = "lib/load-file.js"></script>
+
+      <!-- Include main program -->
+      <script src = "prog/main.js"></script>
+
+      <!-- Include tick function -->
+      <script src = "prog/tick.js"></script>
+
+      <!-- Include internal functions -->
+      <script src = "prog/eventFunctions.js"></script>
+      <script src = "prog/glslFunctions.js"></script>
+      <script src = "prog/htmlFunctions.js"></script>
+
+      <!-- Include scene objects -->
+      <script src = "prog/scene/scene.js"></script>
+      <script src = "prog/scene/vertex.js"></script>
+      <script src = "prog/scene/geometry.js"></script>
+
+      <!-- Include geometric objects -->
+      <script src = "prog/geometries/circle.js"></script>
+      <script src = "prog/geometries/square.js"></script>
+      <script src = "prog/geometries/triangle.js"></script>
+      <script src = "prog/geometries/cube.js"></script>
+
+      <!-- Include animated geometric objects -->
+      <script src = "prog/geometries/animated/randomCircle.js"></script>
+      <script src = "prog/geometries/animated/spinningSquare.js"></script>
+      <script src = "prog/geometries/animated/fluctuatingTriangle.js"></script>
+      <script src = "prog/geometries/animated/tiltedCube.js"></script>
+      <script src = "prog/geometries/animated/movingObject.js"></script>
+      <script src = "prog/geometries/animated/checkerCube.js"></script>
+      <script src = "prog/geometries/animated/texturedCube.js"></script>
+
+      <!-- Include shaders -->
+      <script src = "prog/shaders.js"></script>
+
+      <!-- OBJ Loading -->
+      <script src = "lib/obj_loading/webgl-obj-loader.js"></script>
+      <script src = "lib/obj_loading/loadedOBJ.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  </head>
+
+  <body onload = "main()">
+    <p> Assignment 4 </p>
+
+    <!-- YOUR CODE HERE -->
+    <canvas id="myWebGL" width="500" height="500"> Please use a browser that supports "canvas" </canvas>
+    <div class='button-container'>
+      <button type="button" onclick="clearCanvas()">Clear Canvas</button>
+    </div>
+    <p>Shapes drawn in: <span id="drawing_time"></span> milliseconds</p>
+    <p>x: <span id="x_value"></span></p>
+    <p>y: <span id="y_value"></span></p>
+    <p class="my-title">Drawing Mode:</p>
+    <div class="button-container">
+      <button class="simple-btn" type="button" onclick="selectSquares()">Squares</button>
+      <button class="simple-btn" type="button" onclick="selectTriangles()">Triangles</button>
+      <button class="simple-btn" type="button" onclick="selectCircles()">Circles</button>
+      <button class="simple-btn" type="button" onclick="selectCubes()">Cubes</button>
+      <button class="simple-btn" type="button" onclick="selectObjects()">OBJ</button>
+    </div>
+    <div class='file-container'>
+      <div class='fileloader-div'>
+        <p>Set OBJ:</p>
+        <input class="file-loader-btn" type="file" accept=".obj" id="myObjFile" onchange="handleObjFiles(this.files)">
+      </div>
+      <div class='fileloader-div'>
+        <p>Set Texture Image:</p>
+        <input class="file-loader-btn" type="file" id="myTextureFile" onchange="handleTextureFiles(this.files)">
+      </div>
+    </div>
+    <p class="my-title">Shape Color:</p>
+    <div class='slider-div'>
+      <button class="simple-btn" id="color_mode" type="button" onclick="selectColorMode()">Solid Color</button>
+    </div>
+    <div class="slider-container">
+      <div class='slider-div'>
+        <p>Color Red:</p>
+        <input type="range" min="0.0" max="1.0" step="0.05" value="1.0"  class="slider" id="color_red">
+      </div>
+      <div class='slider-div'>
+        <p>Color Green:</p>
+        <input type="range" min="0.0" max="1.0" step="0.05" value="0.0" class="slider" id="color_green">
+      </div>
+      <div class='slider-div'>
+        <p>Color Blue:</p>
+        <input type="range" min="0.0" max="1.0" step="0.05" value="0.0" class="slider" id="color_blue">
+      </div>
+      <div class='slider-div'>
+        <p>Shape Size</p>
+        <input type="range" min="0.0" max="2.0" step="0.05" value="0.5" class="slider" id="shape_size">
+      </div>
+      <div class='slider-div'>
+        <p>Sigment Count(Circles):</p>
+        <input type="range" min="10" max="100" value="10" class="slider" id="seg_count">
+      </div>
+    </div>
+  </body>
+</html>
